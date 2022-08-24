@@ -44,21 +44,21 @@ N3150
 
 `docker run \`
 
-`--name ubuntu \`    _据情况是否修改_
+`--name ubuntu \`    #_据情况是否修改_
 
 `--network=bridge \`
 
-`-v nas中bluray路径:/usr/local/bin \`    **_修改_**
+`-v nas中bluray路径:/usr/local/bin \`   #**_修改_**
 
-`-v nas中BDinfoCli.0.7文件夹路径:/etc/abox/app \`    **_修改_**
+`-v nas中BDinfoCli.0.7文件夹路径:/etc/abox/app \`    #**_修改_**
 
-`-v nas中BDMV路径:自行决定 \`    **_修改_**
+`-v nas中BDMV路径:自行决定 \`    #**_修改_**
 
-`-v nas中log文件夹路径(包含/log):/log \`  **_修改_ log文件夹需要自行新建**
+`-v nas中log文件夹路径(包含/log):/log \`  #**_修改_ log文件夹需要自行新建**
 
-`--restart always \`  _据情况决定是否添加_
+`--restart always \`  #_据情况决定是否添加_
 
-`-e HTTP_PROXY="http://你的代理IP:你的代理端口/" \`  _据情况决定是否添加_
+`-e HTTP_PROXY="http://你的代理IP:你的代理端口/" \`  #_据情况决定是否添加_
 
 `-d ubuntu:18.04`
 

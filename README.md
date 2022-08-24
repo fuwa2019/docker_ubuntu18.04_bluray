@@ -60,11 +60,91 @@ N3150
 
 `-d ubuntu:18.04`
 
+`--privileged=true`
+
+`/usr/sbin/init`
+
 在连接nas的ssh后，输入`docker exec -t -i 容器名 /bin/bash`进入容器ssh
 
 ## 容器内部环境配置
-更新
+### 更新
+`apt-get -y update`
 
-`apt-get update`
+### 基本软件包安装
+`apt-get install -y sudo vim wget systemctl`
 
-换源 _根据自己情况选择合适的源，一般推荐aliyun_
+### 换源 _根据自己情况选择合适的源，一般推荐aliyun_
+#### 备份源列表
+`sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak`
+
+#### 修改sources.list文件
+`sudo vim /etc/apt/sources.list`
+
+#### 将原配置全部注释掉，再文末添加
+`deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse`
+
+`deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse`
+
+`deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse`
+
+`deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse`
+
+`deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse`
+
+`deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse`
+
+`deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse`
+
+`deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse`
+
+`deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse`
+
+`deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse`
+
+#### 保存
+**ESC** + `:wq!`
+
+#### 更新源
+`sudo apt-get -y update`
+
+#### 更新软件
+`sudo apt-get -y dist-upgrade`
+
+`sudo apt-get -y upgrade`
+
+### 手动安装部分软件包
+`apt-get install -y ffmpeg imagemagick`
+
+### 运行脚本 自动安装其他软件包
+#### 说明
+Aniverse/bluray提到的`bash <(wget -qO- https://git.io/bluray)`对国内环境及docker环境不友好，换成`wget -qO- https://raw.githubusercontent.com/Aniverse/bluray/master/bluray`再赋予权限后运行即可解决。
+#### 具体操作
+`wget -qO- https://raw.githubusercontent.com/Aniverse/bluray/master/bluray`
+
+`chmod -R +x /usr/local/bin/bluray`
+
+`bluray` **后续直接用此行运行脚本**
+
+等待脚本出现提示信息后按`1`+**回车**开始自动安装，**有[y/N ]的选 y即可**
+
+### 安装至此已完成
+
+## 后续使用
+
+在连接nas的ssh后，输入`docker exec -t -i 容器名 /bin/bash`进入容器ssh
+
+输入`bluray`运行脚本
+
+过程参照Aniverse/bluray
+
+输出文件再nas中`你的目录/log/bluray/BDMV文件夹名称`中可见 **与Aniverse/bluray中相似**
+
+## 参考文档
+
+https://github.com/Aniverse/bluray#guide
+https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#images
+https://blog.csdn.net/TracelessLe/article/details/107362505
+https://blog.csdn.net/qq_46092061/article/details/118878697
+https://blog.csdn.net/xiao_yi_xiao/article/details/120672705
+https://blog.csdn.net/liuxiabing150/article/details/45872783
+https://www.cnblogs.com/gaojia-hackerone/p/15202230.html

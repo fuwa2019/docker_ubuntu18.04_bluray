@@ -1,6 +1,7 @@
 # docker_ubuntu18.04_bluray
+**首先感谢Aniverse大神的bluray脚本，这个方案是基于Aniverse/bluray实现的**
+
 ![](https://github.com/fuwa2019/docker_ubuntu18.04_bluray/blob/main/snipaste20220824_094636.jpg)
-首先感谢Aniverse大神的bluray脚本，这个方案是基于Aniverse/bluray实现的
 
 ## 功能实现：	
 1、在docker环境中，利用ubuntu18.04容器实现蓝光原盘bdinfo扫描、截图、以及制作种子等一系列操作

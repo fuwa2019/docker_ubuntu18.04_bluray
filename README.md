@@ -142,9 +142,15 @@ Aniverse/bluray提到的`bash <(wget -qO- https://git.io/bluray)`对国内环境
 ## 参考文档
 
 https://github.com/Aniverse/bluray#guide
+
 https://docs.github.com/cn/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#images
+
 https://blog.csdn.net/TracelessLe/article/details/107362505
+
 https://blog.csdn.net/qq_46092061/article/details/118878697
+
 https://blog.csdn.net/xiao_yi_xiao/article/details/120672705
+
 https://blog.csdn.net/liuxiabing150/article/details/45872783
+
 https://www.cnblogs.com/gaojia-hackerone/p/15202230.html

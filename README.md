@@ -30,10 +30,41 @@ N3150
 
 `bash <(wget -qO- https://git.io/bluray)`
 
-安装方式见Aniverse/bluray，此处不再赘述，其中要注意的是`/etc/abox/app/`下要新建文件夹`BDinfoCli.0.7、将`bdinfocli.exe`重命名为`BDInfo.exe`、并将`BDInfo.exe`移动到`/etc/abox/app/BDinfoCli.0.7.3`，此脚本才能在vps上正常运行。_个人测试结果，请根据环境自行修改_
+安装方式见Aniverse/bluray，此处不再赘述，其中要注意的是`/etc/abox/app/`下要新建文件夹`BDinfoCli.0.7`、将`bdinfocli.exe`重命名为`BDInfo.exe`、并将`BDInfo.exe`移动到`/etc/abox/app/BDinfoCli.0.7.3`，此脚本才能在vps上正常运行。_个人测试结果，请根据环境自行修改_
 
 ### 下载的文件
 
-将文件夹目录`/etc/abox/app/`下的`BDinfoCli.0.7.3`文件夹及目录`/usr/local/`下的文件夹`bin`下载到本地，其中`bin`中的`smartctl`与脚本无关，请自行去留
+将文件夹目录`/etc/abox/app/`下的`BDinfoCli.0.7.3`文件夹及目录`/usr/local/`下的文件夹`bin`下载到本地并上传至nas，其中`bin`中的`smartctl`与脚本无关，请自行去留
 
 ## docker外部环境配置
+
+`docker pull ubuntu:18.04`
+
+`docker run \`
+
+`--name ubuntu \`    _据情况是否修改_
+
+`--network=bridge \`
+
+`-v nas中bluray路径:/usr/local/bin \`    **_修改_**
+
+`-v nas中BDinfoCli.0.7文件夹路径:/etc/abox/app \`    **_修改_**
+
+`-v nas中BDMV路径:自行决定 \`    **_修改_**
+
+`-v nas中log文件夹路径(包含/log):/log \`  **_修改_ log文件夹需要自行新建**
+
+`--restart always \`  _据情况决定是否添加_
+
+`-e HTTP_PROXY="http://你的代理IP:你的代理端口/" \`  _据情况决定是否添加_
+
+`-d ubuntu:18.04`
+
+在连接nas的ssh后，输入`docker exec -t -i 容器名 /bin/bash`进入容器ssh
+
+## 容器内部环境配置
+更新
+
+`apt-get update`
+
+换源 _根据自己情况选择合适的源，一般推荐aliyun_

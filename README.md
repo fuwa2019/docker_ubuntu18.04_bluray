@@ -32,7 +32,7 @@ N3150
 
 `bash <(wget -qO- https://git.io/bluray)`
 
-安装方式见Aniverse/bluray，此处不再赘述，其中要注意的是`/etc/abox/app/`下要新建文件夹`BDinfoCli.0.7`、将`bdinfocli.exe`重命名为`BDInfo.exe`、并将`BDInfo.exe`移动到`/etc/abox/app/BDinfoCli.0.7.3`，此脚本才能在vps上正常运行。_个人测试结果，请根据环境自行修改_
+安装方式见Aniverse/bluray，此处不再赘述，其中要注意的是`/etc/abox/app/`下要新建文件夹`BDinfoCli.0.7.3`、将`bdinfocli.exe`重命名为`BDInfo.exe`、并将`BDInfo.exe`移动到`/etc/abox/app/BDinfoCli.0.7.3`，此脚本才能在vps上正常运行。_个人测试结果，请根据环境自行修改_
 
 ### 下载的文件
 

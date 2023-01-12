@@ -50,7 +50,7 @@ N3150
 
 `-v nas中bluray路径:/usr/local/bin \`   #**_修改_**
 
-`-v nas中BDinfoCli.0.7文件夹路径:/etc/abox/app \`    #**_修改_**
+`-v nas中BDinfoCli.0.7.3文件夹路径:/etc/abox/app \`    #**_修改_**
 
 `-v nas中BDMV路径:自行决定 \`    #**_修改_**
 
